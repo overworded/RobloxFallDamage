@@ -7,7 +7,7 @@ local function FallDmg(Plr: Player, Char: Instance)
 	end
 end
 
-game.Players.PlayerAdded:Connect(function(Plr) -- player joins
+game.Players.PlayerAdded:Connect(function(Plr) -- player joins the game
 	Plr.CharacterAdded:Connect(function(Char) -- players character is created
 		Char.Humanoid.StateChanged:Connect(function(oldState, newState) -- check for fall dmg
 			if newState == Enum.HumanoidStateType.Landed then -- if the state is landed
