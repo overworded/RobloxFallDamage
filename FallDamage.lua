@@ -9,7 +9,7 @@ end
 game.Players.PlayerAdded:Connect(function(Plr) -- player joins the game.
 	Plr.CharacterAdded:Connect(function(Char) -- players character is created.
 		Char.Humanoid.StateChanged:Connect(function(oldState, newState) -- check for potential falls.
-			if newState == Enum.HumanoidStateType.Landed then -- if the state is landed (they fell).
+			if oldState == Enum.HumanoidStateType.Freefall then -- if the state is landed (they fell).
 				FallDmg(Char) -- do fall damage.
 			end
 		end)
